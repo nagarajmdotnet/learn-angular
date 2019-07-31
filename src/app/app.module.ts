@@ -24,7 +24,7 @@ import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapsibleWellComponent } from './common/collapsible-well';
 
-let toastr1: Toastr = window['toastr']
+let toastr: Toastr = window['toastr']
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ let toastr1: Toastr = window['toastr']
     RouterModule.forRoot(appRouter)
   ],
   providers: [
-    { provide: TOKEN_TOASTR, useValue: toastr1 },
+    { provide: TOKEN_TOASTR, useValue: toastr },
     EventService,    
     EventsResolver,
     EventDetailActivatorComponent,
