@@ -17,14 +17,14 @@ import {
 } from "./events/index";
 
 import { NavBarComponent } from "./nav/nav-bar.component";
-import { TOKEN_TOASTR, Toastr } from './common/toastr-service';
 import { appRouter } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CollapsibleWellComponent } from './common/collapsible-well';
+import { TOKEN_TOASTR, Toastr, TOKEN_JQUERY, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common';
 
 let toastrRef: Toastr = window['toastr']
+let jQueryRef: any = window['$']
 
 @NgModule({
   declarations: [
@@ -38,7 +38,9 @@ let toastrRef: Toastr = window['toastr']
     Error404Component,
     NavBarComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    SimpleModalComponent,
+    DurationPipe,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ let toastrRef: Toastr = window['toastr']
   ],
   providers: [
     { provide: TOKEN_TOASTR, useValue: toastrRef },
+    { provide: TOKEN_JQUERY, useValue: jQueryRef },
     EventService,    
     EventsResolver,
     EventDetailActivatorComponent,
