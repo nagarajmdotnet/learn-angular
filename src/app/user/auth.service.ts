@@ -11,14 +11,14 @@ export class AuthService {
             userName: "nagaraj",
             firstName: "Nagaraj",
             lastName: "Muthuchamy"
-        },
-        console.log(this.currentUser)
+        }
+        //console.log(this.currentUser)
     }
 
     UpdatePofile(firstName: string, lastName: string) {
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
-        console.log(this.currentUser)
+        //console.log(this.currentUser)
       }
 
     isAuthenticated() {

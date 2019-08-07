@@ -14,6 +14,9 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
+  VoterService,
+  UpvoteComponent,
+  LocationValidator,
 } from "./events/index";
 
 import { NavBarComponent } from "./nav/nav-bar.component";
@@ -40,7 +43,9 @@ let jQueryRef: any = window['$']
     CollapsibleWellComponent,
     SimpleModalComponent,
     DurationPipe,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent,
+    LocationValidator
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ let jQueryRef: any = window['$']
     EventService,    
     EventsResolver,
     EventDetailActivatorComponent,
-    AuthService
+    AuthService,
+    VoterService
   ],
   bootstrap: [EventsAppComponent]
 })
